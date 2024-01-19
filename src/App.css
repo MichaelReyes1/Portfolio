@@ -1,18 +1,131 @@
 /* App.js */
 
+.app-container {
+  width: 1512px;
+  height: 982px;
+  background-color: rgb(3, 3, 3);
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+}
 
 .flex-position {
   display: flex;
+  justify-content: space-evenly;
 }
+
 .flex-col {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
 }
+
+.header-style {
+  width: 716px;
+  height: 153px;
+  flex-shrink: 0;
+  text-align: center;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: Libre Baskerville;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  background: linear-gradient(180deg, #FFF 0%, rgba(255, 255, 255, 0.00) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 /* Projects.js */
 
 .projects-mike {
   width: 406px;
-  height: 901px;
-  background-color: gray;
+  height: 900px;
+  background-color: #D9D9D9;
+  border-radius: 36px;
+  padding: 10px;
   margin: 20px;
+  text-align: center;
+  font-family: Libre Baskerville;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  background: linear-gradient(180deg, #fdfbfb 0%, rgba(0, 0, 0, 0.00) 100%);
 }
+
+
+/* AboutMe.js */
+.about-me-container {
+  width: 715px;
+  height: 210px;
+  flex-shrink: 0;
+  border-radius: 36px;
+  background: #D9D9D9;
+  margin-bottom: -10px;
+  text-align: center;
+  font-family: Libre Baskerville;
+  /* font-size: 36px; */
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  /* background: linear-gradient(180deg, #fdfbfb 0%, rgba(74, 71, 71, 0) 100%); */
+}
+
+.about-me-paragraph {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 8px;
+  font-weight: 200;
+  line-height: 1.5;
+  color: #333; 
+}
+
+/* ContactMe.js */
+.contact-me-container {
+  width: 350px;
+  height: 400px;
+  flex-shrink: 0;
+  border-radius: 36px;
+  background: #D9D9D9;
+  text-align: center;
+  font-family: Libre Baskerville;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  background: linear-gradient(180deg, #fdfbfb 0%, rgba(0, 0, 0, 0.00) 100%);
+}
+
+
+/* Tools.js */
+.tools-container {
+  width: 350px;
+  height: 400px;
+  font-family: Libre Baskerville;
+  flex-shrink: 0;
+  border-radius: 36px;
+  background: #D9D9D9;
+  text-align: center;
+  text-align: center;
+  font-family: Libre Baskerville;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  background: linear-gradient(180deg, #fdfbfb 0%, rgba(0, 0, 0, 0.00) 100%)
+}
+
+.image-container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+  height: 100%;
+}
+
+
+
+
