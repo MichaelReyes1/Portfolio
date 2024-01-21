@@ -1,6 +1,118 @@
-import React from "react";
+// import React from "react";
+// import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+// import { MDBInput, MDBBtn, MDBTextArea } from "mdb-react-ui-kit";
+
+// const TiltCard = ({ children }) => {
+//   const x = useMotionValue(0);
+//   const y = useMotionValue(0);
+
+//   const mouseXSpring = useSpring(x);
+//   const mouseYSpring = useSpring(y);
+
+//   const rotateX = useTransform(
+//     mouseYSpring,
+//     [-0.5, 0.5],
+//     ["17.5deg", "-17.5deg"]
+//   );
+//   const rotateY = useTransform(
+//     mouseXSpring,
+//     [-0.5, 0.5],
+//     ["-17.5deg", "17.5deg"]
+//   );
+
+//   const handleMouseMove = (e) => {
+//     const rect = e.target.getBoundingClientRect();
+
+//     const width = rect.width;
+//     const height = rect.height;
+
+//     const mouseX = e.clientX - rect.left;
+//     const mouseY = e.clientY - rect.top;
+
+//     const xPct = mouseX / width - 0.5;
+//     const yPct = mouseY / height - 0.5;
+
+//     x.set(xPct);
+//     y.set(yPct);
+//   };
+
+//   const handleMouseLeave = () => {
+//     x.set(0);
+//     y.set(0);
+//   };
+
+//   return (
+//     <motion.div
+//       onMouseMove={handleMouseMove}
+//       onMouseLeave={handleMouseLeave}
+//       style={{
+//         rotateY,
+//         rotateX,
+//         transformStyle: "preserve-3d",
+//         position: "relative",
+//         zIndex:1
+//       }}
+//       className="relative h-96 w-72 rounded-xl bg-gradient-to-br from-indigo-300 to-violet-300"
+//     >
+//       {children}
+//     </motion.div>
+//   );
+// };
+
+// const ContactMe = () => {
+//   const [formData, setFormData] = useState({
+//     name: "",
+//     email: "",
+//     subject: "",
+//     message: "",
+//   });
+
+//   const handleChange = (e) => {
+//     const { name, value } = e.target;
+//     setFormData((prevData) => ({ ...prevData, [name]: value }));
+//   };
+
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
+//     // You can perform further actions here, such as sending the form data to an API
+//     console.log("Form submitted:", formData);
+//   };
+
+//   return (
+//     <TiltCard>
+//       <div className="absolute inset-4 grid place-content-center rounded-xl bg-white shadow-lg">
+//         <div className="contact-me-container">
+//           Contact Me
+//           <form
+//             id="form"
+//             className="text-center"
+//             style={{ width: "100%", maxWidth: "300px" }}
+//             onSubmit={handleSubmit}
+//           >
+//             <MDBInput className="input" placeholder="name" v-model="name" />
+//             <MDBInput className="input"
+//               type="email"
+//               placeholder="Email address"
+//               v-model="email"
+//             />
+//             <MDBInput className="input" placeholder="Subject" v-model="subject"  />
+//             <MDBTextArea className="input"  placeholder="Message" />
+//             <MDBBtn className="input button">
+//               Send
+//             </MDBBtn>
+//           </form>
+//         </div>
+//       </div>
+//     </TiltCard>
+//   );
+// };
+
+// export default ContactMe;
+
+
+import React, { useState } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { MDBInput, MDBCheckbox, MDBBtn, MDBTextArea } from "mdb-react-ui-kit";
+import { MDBInput, MDBBtn, MDBTextArea } from "mdb-react-ui-kit";
 
 const TiltCard = ({ children }) => {
   const x = useMotionValue(0);
@@ -49,6 +161,8 @@ const TiltCard = ({ children }) => {
         rotateY,
         rotateX,
         transformStyle: "preserve-3d",
+        position: "relative",
+        zIndex: 1,
       }}
       className="relative h-96 w-72 rounded-xl bg-gradient-to-br from-indigo-300 to-violet-300"
     >
@@ -58,6 +172,24 @@ const TiltCard = ({ children }) => {
 };
 
 const ContactMe = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({ ...prevData, [name]: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // You can perform further actions here, such as sending the form data to an API
+    console.log("Form submitted:", formData);
+  };
+
   return (
     <TiltCard>
       <div className="absolute inset-4 grid place-content-center rounded-xl bg-white shadow-lg">
@@ -67,21 +199,38 @@ const ContactMe = () => {
             id="form"
             className="text-center"
             style={{ width: "100%", maxWidth: "300px" }}
+            onSubmit={handleSubmit}
           >
-            <MDBInput label="Name" v-model="name" wrapperClass="mb-4" />
             <MDBInput
+              className="input"
+              placeholder="Name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+            />
+            <MDBInput
+              className="input"
               type="email"
-              label="Email address"
-              v-model="email"
-              wrapperClass="mb-4"
+              placeholder="Email address"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
             />
-            <MDBInput label="Subject" v-model="subject" wrapperClass="mb-4" />
-            <MDBTextArea wrapperClass="mb-4" label="Message" />
-            <MDBCheckbox
-              wrapperClass="d-flex justify-content-center"
-              label="Send me copy"
+            <MDBInput
+              className="input"
+              placeholder="Subject"
+              name="subject"
+              value={formData.subject}
+              onChange={handleChange}
             />
-            <MDBBtn color="primary" block className="my-4">
+            <MDBTextArea
+              className="input"
+              placeholder="Message"
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+            />
+            <MDBBtn type="submit" className="input button">
               Send
             </MDBBtn>
           </form>
@@ -92,3 +241,4 @@ const ContactMe = () => {
 };
 
 export default ContactMe;
+
