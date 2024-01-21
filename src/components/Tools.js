@@ -55,8 +55,9 @@ const Tools = () => {
     <TiltCard>
      <div className="absolute inset-4 grid place-content-center rounded-xl bg-white shadow-lg">
       <div className='tools-container'>
-        <div className='image-container'>
+      <div className='tools-title'>
        Tools I use .. 
+        <div className='image-container'>
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" 
        alt="tool-logo"
        style={{ height: '50px', width: '50px' }} />
@@ -84,6 +85,7 @@ const Tools = () => {
      alt="tool-logo"
      style={{ height: '50px', width: '50px' }}
      />
+     </div>
      </div>
     </div>
   </div>

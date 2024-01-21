@@ -40,6 +40,7 @@ const TiltCard = ({ children }) => {
         rotateY,
         rotateX,
         transformStyle: 'preserve-3d',
+        overflow: 'hidden'
       }}
       className="relative h-96 w-72 rounded-xl bg-gradient-to-br from-indigo-300 to-violet-300"
     >
@@ -54,14 +55,24 @@ const TiltCard = ({ children }) => {
 const Projects = () => {
   return (
     <TiltCard>
-      <div className="absolute inset-4 grid place-content-center rounded-xl bg-white shadow-lg">
+      <div className="absolute inset-0 flex flex-col justify-center items-center">
       <div className='projects-mike'> Projects 
      </div>
+     <div className="project-section flex flex-col items-center">
+            <h3>Project 1</h3>
+            <p>Description of Project 1</p>
+          </div>
+          <div className="project-section flex flex-col items-center">
+            <h3>Project 2</h3>
+            <p>Description of Project 2</p>
+          </div>
     </div>
     </TiltCard>
   )
 }
 
 export default Projects
+
+// absolute inset-4 grid place-content-center rounded-xl bg-white shadow-lg
 
 
