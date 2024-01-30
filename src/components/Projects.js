@@ -55,24 +55,35 @@ const TiltCard = ({ children }) => {
 const Projects = () => {
   return (
     <TiltCard>
-      <div className="absolute inset-0 flex flex-col justify-center items-center">
-      <div className='projects-mike'> Projects 
-     </div>
+      <div className="flex flex-col justify-center items-center">
+      <div className='projects-mike'> 
+      <h2>Projects</h2> 
      <div className="project-section flex flex-col items-center">
-            <h3>Project 1</h3>
-            <p>Description of Project 1</p>
-          </div>
           <div className="project-section flex flex-col items-center">
-            <h3>Project 2</h3>
-            <p>Description of Project 2</p>
+             {/* Combined Frontend and Backend project with GitHub link */}
+             <h3><a href="https://github.com/Shot-Callers" target="_blank" rel="noopener noreferrer">Shot Caller App - Frontend & Backend</a></h3>
+            <p>ShotCallers is a revolutionary basketball application crafted by Team Shot Callers, offering real-time connections and a dynamic court map for spontaneous pickup games. With a user-centric design and a commitment to redefining basketball experiences, ShotCallers is your go-to destination for an elevated and enjoyable journey in the world of basketball. Join our exciting mission to connect like-minded enthusiasts and elevate the game. Also, explore the robust backend, powered by Ruby on Rails, ensuring scalability and real-time updates to support our vision.</p>
+      {/* Project 1 with GitHub link */}
+      <h3><a href="https://github.com/MichaelReyes1/text-based-game-the-bench-warmers" target="_blank" rel="noopener noreferrer">Text-Based Game: The Bench Warmers</a></h3>
+            <p> The Bench Warmers is a Ruby-based interactive fiction project executed in the IRB console, offering players an engaging narrative experience where their decisions influence the unfolding story in a dynamically coded environment.</p>
+          </div>
           </div>
     </div>
+     </div>
     </TiltCard>
   )
 }
 
 export default Projects
 
-// absolute inset-4 grid place-content-center rounded-xl bg-white shadow-lg
 
+
+          //   {/* Frontend project with GitHub link */}
+          //   <h3><a href="https://github.com/Shot-Callers/shotcaller-app-frontend" target="_blank" rel="noopener noreferrer">Shot Caller App - Frontend</a></h3>
+          //   <p>Frontend project description goes here.</p>
+          // </div>
+          // <div className="project-section flex flex-col items-center">
+          //   {/* Backend project with GitHub link */}
+          //   <h3><a href="https://github.com/Shot-Callers/shotcaller-app-backend" target="_blank" rel="noopener noreferrer">Shot Caller App - Backend</a></h3>
+          //   <p>Backend project description goes here.</p>
 

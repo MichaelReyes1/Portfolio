@@ -1,6 +1,8 @@
-// import React from "react";
+
+
+// import React, { useState } from "react";
 // import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-// import { MDBInput, MDBBtn, MDBTextArea } from "mdb-react-ui-kit";
+
 
 // const TiltCard = ({ children }) => {
 //   const x = useMotionValue(0);
@@ -50,7 +52,7 @@
 //         rotateX,
 //         transformStyle: "preserve-3d",
 //         position: "relative",
-//         zIndex:1
+//         zIndex: 1,
 //       }}
 //       className="relative h-96 w-72 rounded-xl bg-gradient-to-br from-indigo-300 to-violet-300"
 //     >
@@ -72,11 +74,6 @@
 //     setFormData((prevData) => ({ ...prevData, [name]: value }));
 //   };
 
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     // You can perform further actions here, such as sending the form data to an API
-//     console.log("Form submitted:", formData);
-//   };
 
 //   return (
 //     <TiltCard>
@@ -89,15 +86,36 @@
 //             style={{ width: "100%", maxWidth: "300px" }}
 //             onSubmit={handleSubmit}
 //           >
-//             <MDBInput className="input" placeholder="name" v-model="name" />
-//             <MDBInput className="input"
+//             <MDBInput
+//               className="input"
+//               placeholder="Name"
+//               name="name"
+//               value={formData.name}
+//               onChange={handleChange}
+//             />
+//             <MDBInput
+//               className="input"
 //               type="email"
 //               placeholder="Email address"
-//               v-model="email"
+//               name="email"
+//               value={formData.email}
+//               onChange={handleChange}
 //             />
-//             <MDBInput className="input" placeholder="Subject" v-model="subject"  />
-//             <MDBTextArea className="input"  placeholder="Message" />
-//             <MDBBtn className="input button">
+//             <MDBInput
+//               className="input"
+//               placeholder="Subject"
+//               name="subject"
+//               value={formData.subject}
+//               onChange={handleChange}
+//             />
+//             <MDBTextArea
+//               className="input"
+//               placeholder="Message"
+//               name="message"
+//               value={formData.message}
+//               onChange={handleChange}
+//             />
+//             <MDBBtn type="submit" className="input button">
 //               Send
 //             </MDBBtn>
 //           </form>
@@ -109,10 +127,8 @@
 
 // export default ContactMe;
 
-
 import React, { useState } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { MDBInput, MDBBtn, MDBTextArea } from "mdb-react-ui-kit";
 
 const TiltCard = ({ children }) => {
   const x = useMotionValue(0);
@@ -175,8 +191,10 @@ const ContactMe = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    subject: "",
     message: "",
+    subscribe: "yes",
+    gender: "male",
+    workExperience: "one-year",
   });
 
   const handleChange = (e) => {
@@ -196,19 +214,20 @@ const ContactMe = () => {
         <div className="contact-me-container">
           Contact Me
           <form
-            id="form"
+          action="https://getform.io/f/d9e94126-8ba5-4f43-8b00-8d18270510e8"
+          method="POST"
             className="text-center"
             style={{ width: "100%", maxWidth: "300px" }}
-            onSubmit={handleSubmit}
           >
-            <MDBInput
+            <input
               className="input"
+              type="text"
               placeholder="Name"
               name="name"
               value={formData.name}
               onChange={handleChange}
             />
-            <MDBInput
+            <input
               className="input"
               type="email"
               placeholder="Email address"
@@ -216,23 +235,24 @@ const ContactMe = () => {
               value={formData.email}
               onChange={handleChange}
             />
-            <MDBInput
+            <input
               className="input"
-              placeholder="Subject"
-              name="subject"
-              value={formData.subject}
-              onChange={handleChange}
-            />
-            <MDBTextArea
-              className="input"
+              type="text"
               placeholder="Message"
               name="message"
               value={formData.message}
               onChange={handleChange}
             />
-            <MDBBtn type="submit" className="input button">
+            {/* Add hidden Honeypot input to prevent spams */}
+            <input
+              type="hidden"
+              name="_gotcha"
+              style={{ display: "none !important" }}
+            />
+            {/* Select field handle */}
+            <button className="input button">
               Send
-            </MDBBtn>
+            </button>
           </form>
         </div>
       </div>
@@ -241,4 +261,3 @@ const ContactMe = () => {
 };
 
 export default ContactMe;
-
