@@ -59,19 +59,12 @@ const TiltCard = ({ children }) => {
 const AboutMe = () => {
   return (
     <TiltCard>
-      <div className="absolute inset-4 grid place-content-center rounded-xl bg-white shadow-lg">
+      <div>
         <div className="about-me-container">
           {" "}
           About Me
           <p className="about-me-paragraph">
-            Leveraging my military background, I bring precision, composure
-            under pressure, and a passion for efficiency to web development.
-            Similar to overseeing aircraft on the Flight Deck, I thrive on
-            bringing order to digital experiences. Proficient in languages like
-            Ruby on Rails, React, HTML, CSS, JavaScript, and PostgreSQL, I
-            embrace collaborative and adaptable approaches, drawing on
-            leadership and problem-solving skills gained in the military.
-            Excited to make a meaningful impact as a software developer.
+          Precise, composed under pressure, and driven by efficiency, I bring a military-honed approach to web development. Proficient in Ruby on Rails, React, HTML, CSS, JavaScript, and PostgreSQL, I leverage collaborative methodologies with leadership skills gained in the military. Excited to contribute to impactful projects, let's connect on <a href="https://github.com/MichaelReyes1" target="_blank" rel="noopener noreferrer">GitHub</a> and <a href="https://www.linkedin.com/in/michaelreyes5" target="_blank" rel="noopener noreferrer">LinkedIn</a> to explore potential collaborations
           </p>
         </div>
       </div>
@@ -80,3 +73,5 @@ const AboutMe = () => {
 };
 
 export default AboutMe;
+
+

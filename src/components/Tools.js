@@ -53,7 +53,7 @@ const TiltCard = ({ children }) => {
 const Tools = () => {
   return (
     <TiltCard>
-     <div className="absolute inset-4 grid place-content-center rounded-xl bg-white shadow-lg">
+     <div>
       <div className='tools-container'>
       <div className='tools-title'>
        Tools I use .. 
@@ -94,3 +94,7 @@ const Tools = () => {
 }
 
 export default Tools
+
+
+
+// className="absolute inset-4 grid place-content-center rounded-xl bg-white shadow-lg"

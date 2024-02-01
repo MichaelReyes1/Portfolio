@@ -11,9 +11,9 @@ import './App.css'
 const App = () => {
   
   return (
-    <> 
-    <div className='app-container'>
-      <div className='flex-position'> 
+    
+    <div className='app-container '>
+      <div className='flex-position d-flex flex-column flex-sm-row mx-auto justify-content-center align-items-center'> 
         <Projects/>
         <div className='flex-col'>
           <h1 className='header-style'>Michael Reyes </h1>
@@ -22,10 +22,9 @@ const App = () => {
           <ContactMe/>
           <Tools/>
           </div>
-        </div>
-      </div>
-    </div>
-   </>
+  //     </div>
+  //   </div>
+  //  </div>
   )
 }
 
